@@ -1304,7 +1304,7 @@ struct SubstLookup : Lookup
   {
     TRACE_CLOSURE (this);
     if (!c->should_visit_lookup (this_index))
-      return_trace (HB_VOID);
+      return_trace (hb_void_t ());
 
     c->set_recurse_func (dispatch_closure_recurse_func);
 
@@ -1406,7 +1406,7 @@ struct SubstLookup : Lookup
   static hb_closure_context_t::return_t dispatch_closure_recurse_func (hb_closure_context_t *c, unsigned int lookup_index)
   {
     if (!c->should_visit_lookup (lookup_index))
-      return HB_VOID;
+      return hb_void_t ();
 
     hb_closure_context_t::return_t ret = dispatch_recurse_func (c, lookup_index);
 
